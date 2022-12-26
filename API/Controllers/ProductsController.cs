@@ -26,6 +26,7 @@ public class ProductsController : BaseApiController
 
     //GET: api/products
     [HttpGet]
+    [MapToApiVersion("1.0")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<ActionResult<Pager<ProductListDto>>> Get([FromQuery] Params productParams)
@@ -40,7 +41,7 @@ public class ProductsController : BaseApiController
     }
 
     //GET: api/products
-    [HttpGet]
+    [HttpGet("new")]
     [MapToApiVersion("1.1")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
