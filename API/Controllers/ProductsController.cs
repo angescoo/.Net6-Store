@@ -11,7 +11,8 @@ namespace API.Controllers;
 
 [ApiVersion("1.0")]
 [ApiVersion("1.1")]
-[Authorize(Roles = "Administrator")]
+[Produces("application/json")]
+//[Authorize(Roles = "Administrator")]
 //[Authorize]
 public class ProductsController : BaseApiController
 {
@@ -53,6 +54,7 @@ public class ProductsController : BaseApiController
 
     //GET: api/products/4
     [HttpGet("{id}")]
+    [Authorize(Roles = "Administrator")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
